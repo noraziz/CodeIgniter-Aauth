@@ -3,7 +3,7 @@
 </p>
 
 ***
-Aauth is a User Authorization Library for CodeIgniter 2.x and 3.x, which aims to make easy some essential jobs such as login, permissions and access operations. Despite its ease of use, it has also very advanced features like private messages, groupping, access management, and public access.
+Aauth is a User Authorization Library for CodeIgniter 4.x, the original version [aauth](https://github.com/emreakay/CodeIgniter-Aauth), which aims to make easy some essential jobs such as login, permissions and access operations. Despite its ease of use, it has also very advanced features like private messages, groupping, access management, and public access.
 
 **This is Quick Start page. You can also take a look at the [detailed Documentation Wiki](https://github.com/magefly/CodeIgniter-Aauth/wiki) to learn about other great Features**
 
@@ -22,18 +22,13 @@ Aauth is a User Authorization Library for CodeIgniter 2.x and 3.x, which aims to
 * Langugage and config file support
 * Flexible implementation
 
-### What is new in Version 2
+### What's new
 ***
-* User Permissions
-* User and System Variables
-* Login DDoS Protection
-* Updated functions (check documentation for details)
-* Bugs fixes
-* TOTP (Time-based One-time Password)
+* PSR-4 Compatibility, using branch `psr4-lib`.
 
 ### Migration
 ***
-* If you are currently using Version 1, take a look at the [v1 to v2 migration page.](https://github.com/magefly/CodeIgniter-Aauth/wiki/1%29-Migration-from-V1).
+* Coming soon.
 
 ### Quick Start 
 ***
@@ -186,3 +181,4 @@ You have reached the end of the Quick Start Guide, but please take a look at the
 
 Don't forget to keep and eye on Aauth, we are constantly improving the system.
 You can also contribute and help me out. :)
+
