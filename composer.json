@@ -1,0 +1,41 @@
+{
+    "name": "noraziz/ci4-aauth",
+    "description": "Aauth is a User Authorization Library for CodeIgniter 4.x, the original version https://github.com/emreakay/CodeIgniter-Aauth",
+    "type": "library",
+    "keywords": [
+        "codeigniter",
+        "codeigniter4",
+        "authentication",
+        "library"
+    ],
+    "homepage": "https://github.com/noraziz",
+    "require": {
+        "php": ">=7.3.0"
+    },
+    "require-dev": {
+        "codeigniter4/framework": "^4.2",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+          "noraziz\\ci4aauth\\": "src"
+        } 
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "noraziz\\ci4aauth\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "LGPL v3",
+    "authors": [
+        {
+            "name": "Nor Aziz",
+            "homepage": "https://github.com/noraziz"
+        }
+    ]
+}
