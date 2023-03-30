@@ -31,7 +31,7 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "license": "LGPL v3",
+    "license": "LGPL-3.0",
     "authors": [
         {
             "name": "Nor Aziz",
