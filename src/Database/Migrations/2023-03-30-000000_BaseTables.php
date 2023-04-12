@@ -1,15 +1,17 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
-
+<?php
 namespace noraziz\ci4aauth\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class BaseTables extends Migration {
-
-	public function up() {
-
+class BaseTables extends Migration
+{
+	
+	public function up()
+	{
+		$tbl_attrs = ['ENGINE' => 'InnoDB'];
+		
 		## Create Table aauth_group_to_group
-		$this->dbforge->add_field(array(
+		$this->forge->addField(array(
 			'group_id' => array(
 				'type' => 'INT',
 				'constraint' => 1,
@@ -25,12 +27,11 @@ class BaseTables extends Migration {
 
 			),
 		));
-		$this->dbforge->add_key("subgroup_id",true);
-		$this->dbforge->create_table("aauth_group_to_group", TRUE);
-		$this->db->query('ALTER TABLE  `aauth_group_to_group` ENGINE = InnoDB');
+		$this->forge->addKey("subgroup_id",true);
+		$this->forge->createTable("aauth_group_to_group", TRUE, $tbl_attrs);
 
 		## Create Table aauth_groups
-		$this->dbforge->add_field(array(
+		$this->forge->addField(array(
 			'id' => array(
 				'type' => 'INT',
 				'constraint' => 1,
@@ -50,12 +51,11 @@ class BaseTables extends Migration {
 
 			),
 		));
-		$this->dbforge->add_key("id",true);
-		$this->dbforge->create_table("aauth_groups", TRUE);
-		$this->db->query('ALTER TABLE  `aauth_groups` ENGINE = InnoDB');
+		$this->forge->addKey("id",true);
+		$this->forge->createTable("aauth_groups", TRUE, $tbl_attrs);
 
 		## Create Table aauth_login_attempts
-		$this->dbforge->add_field(array(
+		$this->forge->addField(array(
 			'id' => array(
 				'type' => 'INT',
 				'constraint' => 11,
@@ -82,12 +82,11 @@ class BaseTables extends Migration {
 
 			),
 		));
-		$this->dbforge->add_key("id",true);
-		$this->dbforge->create_table("aauth_login_attempts", TRUE);
-		$this->db->query('ALTER TABLE  `aauth_login_attempts` ENGINE = InnoDB');
+		$this->forge->addKey("id",true);
+		$this->forge->createTable("aauth_login_attempts", TRUE, $tbl_attrs);
 
 		## Create Table aauth_perm_to_group
-		$this->dbforge->add_field(array(
+		$this->forge->addField(array(
 			'perm_id' => array(
 				'type' => 'INT',
 				'constraint' => 1,
@@ -103,12 +102,11 @@ class BaseTables extends Migration {
 
 			),
 		));
-		$this->dbforge->add_key("group_id",true);
-		$this->dbforge->create_table("aauth_perm_to_group", TRUE);
-		$this->db->query('ALTER TABLE  `aauth_perm_to_group` ENGINE = InnoDB');
+		$this->forge->addKey("group_id",true);
+		$this->forge->createTable("aauth_perm_to_group", TRUE, $tbl_attrs);
 
 		## Create Table aauth_perm_to_user
-		$this->dbforge->add_field(array(
+		$this->forge->addField(array(
 			'perm_id' => array(
 				'type' => 'INT',
 				'constraint' => 1,
@@ -124,12 +122,11 @@ class BaseTables extends Migration {
 
 			),
 		));
-		$this->dbforge->add_key("user_id",true);
-		$this->dbforge->create_table("aauth_perm_to_user", TRUE);
-		$this->db->query('ALTER TABLE  `aauth_perm_to_user` ENGINE = InnoDB');
+		$this->forge->addKey("user_id",true);
+		$this->forge->createTable("aauth_perm_to_user", TRUE, $tbl_attrs);
 
 		## Create Table aauth_perms
-		$this->dbforge->add_field(array(
+		$this->forge->addField(array(
 			'id' => array(
 				'type' => 'INT',
 				'constraint' => 1,
@@ -149,12 +146,11 @@ class BaseTables extends Migration {
 
 			),
 		));
-		$this->dbforge->add_key("id",true);
-		$this->dbforge->create_table("aauth_perms", TRUE);
-		$this->db->query('ALTER TABLE  `aauth_perms` ENGINE = InnoDB');
+		$this->forge->addKey("id",true);
+		$this->forge->createTable("aauth_perms", TRUE, $tbl_attrs);
 
 		## Create Table aauth_pms
-		$this->dbforge->add_field(array(
+		$this->forge->addField(array(
 			'id' => array(
 				'type' => 'INT',
 				'constraint' => 1,
@@ -210,12 +206,11 @@ class BaseTables extends Migration {
 
 			),
 		));
-		$this->dbforge->add_key("id",true);
-		$this->dbforge->create_table("aauth_pms", TRUE);
-		$this->db->query('ALTER TABLE  `aauth_pms` ENGINE = InnoDB');
+		$this->forge->addKey("id",true);
+		$this->forge->createTable("aauth_pms", TRUE, $tbl_attrs);
 
 		## Create Table aauth_user_to_group
-		$this->dbforge->add_field(array(
+		$this->forge->addField(array(
 			'user_id' => array(
 				'type' => 'INT',
 				'constraint' => 1,
@@ -231,12 +226,11 @@ class BaseTables extends Migration {
 
 			),
 		));
-		$this->dbforge->add_key("group_id",true);
-		$this->dbforge->create_table("aauth_user_to_group", TRUE);
-		$this->db->query('ALTER TABLE  `aauth_user_to_group` ENGINE = InnoDB');
+		$this->forge->addKey("group_id",true);
+		$this->forge->createTable("aauth_user_to_group", TRUE, $tbl_attrs);
 
 		## Create Table aauth_user_variables
-		$this->dbforge->add_field(array(
+		$this->forge->addField(array(
 			'id' => array(
 				'type' => 'INT',
 				'constraint' => 1,
@@ -263,12 +257,11 @@ class BaseTables extends Migration {
 
 			),
 		));
-		$this->dbforge->add_key("id",true);
-		$this->dbforge->create_table("aauth_user_variables", TRUE);
-		$this->db->query('ALTER TABLE  `aauth_user_variables` ENGINE = InnoDB');
+		$this->forge->addKey("id",true);
+		$this->forge->createTable("aauth_user_variables", TRUE, $tbl_attrs);
 
 		## Create Table aauth_users
-		$this->dbforge->add_field(array(
+		$this->forge->addField(array(
 			'id' => array(
 				'type' => 'INT',
 				'constraint' => 1,
@@ -348,91 +341,33 @@ class BaseTables extends Migration {
 
 			),
 		));
-		$this->dbforge->add_key("id",true);
-		$this->dbforge->create_table("aauth_users", TRUE);
-		$this->db->query('ALTER TABLE  `aauth_users` ENGINE = InnoDB');
-
-		## Create Table appsms_core_company
-		$this->dbforge->add_field(array(
-			'companyID' => array(
-				'type' => 'VARCHAR',
-				'constraint' => 20,
-				'null' => FALSE,
-
-			),
-			'nama' => array(
-				'type' => 'VARCHAR',
-				'constraint' => 50,
-				'null' => FALSE,
-
-			),
-			'alamat' => array(
-				'type' => 'VARCHAR',
-				'constraint' => 512,
-				'null' => TRUE,
-
-			),
-			'telepon' => array(
-				'type' => 'VARCHAR',
-				'constraint' => 50,
-				'null' => TRUE,
-
-			),
-			'website' => array(
-				'type' => 'VARCHAR',
-				'constraint' => 255,
-				'null' => TRUE,
-
-			),
-			'email' => array(
-				'type' => 'VARCHAR',
-				'constraint' => 255,
-				'null' => TRUE,
-
-			),
-			'is_active' => array(
-				'type' => 'ENUM("Y","N")',
-				'null' => FALSE,
-				'default' => 'Y',
-
-			),
-			'keterangan' => array(
-				'type' => 'TEXT',
-				'null' => TRUE,
-
-			),
-			'create_time' => array(
-				'type' => 'DATETIME',
-				'null' => FALSE,
-
-			),
-			'`update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP',
-		));
+		$this->forge->addKey("id",true);
+		$this->forge->createTable("aauth_users", TRUE, $tbl_attrs);
 	 }
 	 
 	 
 
-	public function down()	{
+	public function down()
+	{
 		### Drop table aauth_group_to_group ##
-		$this->dbforge->drop_table("aauth_group_to_group", TRUE);
+		$this->forge->dropTable("aauth_group_to_group", TRUE);
 		### Drop table aauth_groups ##
-		$this->dbforge->drop_table("aauth_groups", TRUE);
+		$this->forge->dropTable("aauth_groups", TRUE);
 		### Drop table aauth_login_attempts ##
-		$this->dbforge->drop_table("aauth_login_attempts", TRUE);
+		$this->forge->dropTable("aauth_login_attempts", TRUE);
 		### Drop table aauth_perm_to_group ##
-		$this->dbforge->drop_table("aauth_perm_to_group", TRUE);
+		$this->forge->dropTable("aauth_perm_to_group", TRUE);
 		### Drop table aauth_perm_to_user ##
-		$this->dbforge->drop_table("aauth_perm_to_user", TRUE);
+		$this->forge->dropTable("aauth_perm_to_user", TRUE);
 		### Drop table aauth_perms ##
-		$this->dbforge->drop_table("aauth_perms", TRUE);
+		$this->forge->dropTable("aauth_perms", TRUE);
 		### Drop table aauth_pms ##
-		$this->dbforge->drop_table("aauth_pms", TRUE);
+		$this->forge->dropTable("aauth_pms", TRUE);
 		### Drop table aauth_user_to_group ##
-		$this->dbforge->drop_table("aauth_user_to_group", TRUE);
+		$this->forge->dropTable("aauth_user_to_group", TRUE);
 		### Drop table aauth_user_variables ##
-		$this->dbforge->drop_table("aauth_user_variables", TRUE);
+		$this->forge->dropTable("aauth_user_variables", TRUE);
 		### Drop table aauth_users ##
-		$this->dbforge->drop_table("aauth_users", TRUE);
-
+		$this->forge->dropTable("aauth_users", TRUE);
 	}
 }
