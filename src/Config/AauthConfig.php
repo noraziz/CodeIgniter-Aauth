@@ -12,6 +12,7 @@ namespace noraziz\ci4aauth\Config;
 */
 
 use CodeIgniter\Config\BaseConfig;
+define('CI4_LIB_AAUTH_TABLEPREFIX', 'aauth_');
 
 class AauthConfig extends BaseConfig
 {
@@ -46,7 +47,7 @@ class AauthConfig extends BaseConfig
 	*/
 	public $db_profile = 'default';
 	
-	private const CI4_LIB_AAUTH_TABLEPREFIX = 'aauth_';
+	//private const CI4_LIB_AAUTH_TABLEPREFIX = 'aauth_';
 	
 	public $tbl_users          = CI4_LIB_AAUTH_TABLEPREFIX . 'users';
 	public $tbl_groups         = CI4_LIB_AAUTH_TABLEPREFIX . 'groups';
