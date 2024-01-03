@@ -102,7 +102,7 @@ $config_aauth["default"] = array(
  'user_variables'                 => 'aauth_user_variables',
  'login_attempts'                 => 'aauth_login_attempts',
 
- 'remember'                       => ' +3 days',
+ 'remember'                       => ' +7 days',
 
  'max'                            => 13,
  'min'                            => 5,
